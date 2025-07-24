@@ -1,0 +1,150 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Replace environment variables in JavaScript files
+        run: |
+          # Replace placeholders with actual secret values
+          find . -name "*.js" -type f -exec sed -i "s|{{CONTACT_FORM_URL}}|${{ secrets.CONTACT_FORM_URL }}|g" {} +
+          find . -name "*.js" -type f -exec sed -i "s|{{NEWS_API_URL}}|${{ secrets.NEWS_API_URL }}|g" {} +
+
+          # Verify replacements (for debugging - remove in production)
+          echo "=== Checking contact.js ==="
+          grep -n "GOOGLE_SCRIPT_URL" assets/js/contact.js || echo "No GOOGLE_SCRIPT_URL found in contact.js"
+
+          echo "=== Checking news.js ==="
+          grep -n "GOOGLE_SHEETS_API_URL" assets/js/news.js || echo "No GOOGLE_SHEETS_API_URL found in news.js"
+
+      - name: Create custom 404 page
+        run: |
+          # Create a 404.html file that redirects to clean URLs
+          cat > 404.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>NgKore - Page Not Found</title>
+              <script>
+                  // Handle clean URLs for GitHub Pages
+                  (function() {
+                      var path = window.location.pathname;
+                      
+                      // Remove trailing slash if present
+                      if (path.endsWith('/') && path.length > 1) {
+                          path = path.slice(0, -1);
+                      }
+                      
+                      // Map of clean URLs to actual file paths
+                      var urlMap = {
+                          '/about': '/pages/about.html',
+                          '/news': '/pages/news.html',
+                          '/solutions': '/pages/solutions.html',
+                          '/contact': '/pages/contact.html'
+                      };
+                      
+                      // Check if this is a clean URL that should be redirected
+                      if (urlMap[path]) {
+                          window.location.replace(urlMap[path]);
+                          return;
+                      }
+                      
+                      // If no match found, redirect to home
+                      if (path !== '/' && path !== '/index.html') {
+                          window.location.replace('/');
+                      }
+                  })();
+              </script>
+              <style>
+                  body {
+                      font-family: 'ABeeZee', Arial, sans-serif;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      min-height: 100vh;
+                      margin: 0;
+                      background: linear-gradient(135deg, #6B9BD1 0%, #4A90E2 100%);
+                      color: white;
+                      text-align: center;
+                  }
+                  .container {
+                      max-width: 500px;
+                      padding: 40px;
+                  }
+                  h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+                  p { font-size: 1.2rem; margin-bottom: 2rem; }
+                  .btn {
+                      background: rgba(255,255,255,0.2);
+                      color: white;
+                      padding: 12px 24px;
+                      text-decoration: none;
+                      border-radius: 6px;
+                      border: 2px solid rgba(255,255,255,0.3);
+                      transition: all 0.3s ease;
+                  }
+                  .btn:hover {
+                      background: rgba(255,255,255,0.3);
+                      transform: translateY(-2px);
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>NgKore</h1>
+                  <p>Redirecting you to the right place...</p>
+                  <a href="/" class="btn">Go Home</a>
+              </div>
+          </body>
+          </html>
+          EOF
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

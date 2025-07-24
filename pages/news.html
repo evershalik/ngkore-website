@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NgKore - Highlights</title>
+    <meta
+      name="description"
+      content="Stay updated with NgKore's latest research developments, events, collaborations, and contributions to the 5G and 6G technology community."
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/favicon/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/news.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main>
+      <!-- Animated Background Elements -->
+      <div class="page-bg-left">
+        <div class="spotlight-beams">
+          <div class="beam beam-1"></div>
+          <div class="beam beam-2"></div>
+          <div class="beam beam-3"></div>
+        </div>
+        <div class="news-network">
+          <svg class="news-svg" viewBox="0 0 170 520" fill="none">
+            <path
+              class="news-line line-1"
+              d="M25 120 Q85 170 145 150"
+              stroke="rgba(107, 155, 209, 0.3)"
+              stroke-width="1.5"
+            />
+            <path
+              class="news-line line-2"
+              d="M35 280 Q80 330 140 310"
+              stroke="rgba(74, 144, 226, 0.4)"
+              stroke-width="1.5"
+            />
+            <circle
+              class="news-node node-1"
+              cx="25"
+              cy="120"
+              r="3"
+              fill="rgba(107, 155, 209, 0.7)"
+            />
+            <circle
+              class="news-node node-2"
+              cx="145"
+              cy="150"
+              r="4"
+              fill="rgba(74, 144, 226, 0.8)"
+            />
+            <circle
+              class="news-node node-3"
+              cx="35"
+              cy="280"
+              r="3.5"
+              fill="rgba(107, 155, 209, 0.6)"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="page-bg-right">
+        <div class="spotlight-effects">
+          <div class="spotlight spot-1"></div>
+          <div class="spotlight spot-2"></div>
+          <div class="spotlight spot-3"></div>
+        </div>
+        <div class="info-stream">
+          <div class="info-bit bit-1"></div>
+          <div class="info-bit bit-2"></div>
+          <div class="info-bit bit-3"></div>
+          <div class="info-bit bit-4"></div>
+        </div>
+      </div>
+
+      <!-- Hero Image Section -->
+      <!-- <section class="hero-image-section">
+            <div class="hero-image-container">
+                <img
+                    src="../assets/images/ngkore-banner.png"
+                    alt="NgKore Cover"
+                    class="hero-cover-image"
+                />
+            </div>
+        </section> -->
+
+      <section class="solutions-hero">
+        <div class="container">
+          <h1 class="solutions-title">In the Spotlight</h1>
+          <p class="solutions-subtitle">
+            Discover key updates, breakthrough innovations, community-driven
+            projects, and global collaborations shaping the future of technology
+            at NgKore.
+          </p>
+        </div>
+      </section>
+
+      <!-- <section class="page-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="page-title">In the Spotlight</h1>
+                </div>
+            </div>
+        </section> -->
+
+      <section class="news-section">
+        <div class="container">
+          <div class="news-filters">
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-filter="all">
+                All News
+              </button>
+              <button class="filter-tab" data-filter="blogs">Blogs</button>
+              <button class="filter-tab" data-filter="videos">Videos</button>
+              <button class="filter-tab" data-filter="events">Events</button>
+              <button class="filter-tab" data-filter="collaboration">
+                Collaboration
+              </button>
+              <button
+                class="refresh-btn"
+                onclick="forceRefreshNews()"
+                title="Refresh latest news"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                  />
+                </svg>
+                Refresh
+              </button>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <!-- News cards will be dynamically generated from JSON data -->
+          </div>
+
+          <div class="pagination-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Include Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/news.js"></script>
+  </body>
+</html>

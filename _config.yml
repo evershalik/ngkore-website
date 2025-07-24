@@ -1,0 +1,55 @@
+# Jekyll configuration for NgKore GitHub Pages
+
+# Site settings
+title: NgKore
+description: "Advancing Next-Generation Networks - Open-source 5G and 6G core network solutions"
+url: "https://ngkore.github.io" # Replace with your actual GitHub Pages URL
+baseurl: "/ngkore-website" # Replace with your repository name if not using a custom domain
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files and directories
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - .gitignore
+  - .github
+  - dev-server.py
+  - dev-server.js
+  - "*.script"
+
+# Include files that start with underscore
+include:
+  - _pages
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Permalink structure
+permalink: pretty
+
+# Sass configuration
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# Compression
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [development]

@@ -1,603 +1,1566 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngkore</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="js/main.js"></script>
-</head>
-<body>
-    <header class="header">
-        <a href="index.html#" class="logo"><img src="images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html#home">home</a></li>
-                <li><a href="index.html#about">about</a></li>
-                <li><a href="index.html#Resources"> Resources </a></li>
-                <li><a href="index.html#Projects"> Projects  </a></li>
-                <li><a href="index.html#Communities"> Communities </a></li>
-                <li><a href="index.html#Members">Members</a></li>
-                <li><a href="https://www.youtube.com/@NgKore" target="_blank">Youtube</a></li>
-                <li><a href="../docs.ngkore.com/index.html" target="_blank">Docs</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NgKore</title>
+    <meta
+      name="description"
+      content="NgKore is a research community dedicated to pushing the boundaries of 5G and 6G technology through open source innovation and collaboration."
+    />
 
-  <section id="home" class="home">
-      <h1> ngKore </h1>
-      <h2>      The next generation of connectivity</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/favicon/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>Unleash the potential of 5G with us !</h3>
-            <p>At our core, we are a research community of  <b> dedicated individuals </b><br>
-                who are committed to pushing the boundaries of what's possible with 5G and 6G technology
-                </p></p>
-            <a href="index.html#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/index.css?v=1737716300" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
+  <body>
+    <!-- Include Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              NgKore:
+              <span class="gradient-text"> Driving </span
+              ><span class="highlight-text">OPEN SOURCE</span
+              ><span class="gradient-text"> Innovation for the </span
+              ><span class="highlight-text">FUTURE</span>
+            </h1>
+            <p class="hero-subtitle">
+              NgKore is an open-source community driving innovation across 5G
+              Advanced, 6G, O-RAN, NTN, AI/ML, post-quantum cryptography,
+              blockchain, quantum technologies, and cloud-native architectures.
             </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
+            <div class="hero-actions">
+              <a href="pages/expertise" class="btn btn-primary">
+                <span>Our Expertise</span>
+                <svg
+                  class="btn-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+              <a href="pages/about" class="btn btn-secondary">
+                <span>About Our Mission</span>
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-illustration">
+              <svg
+                class="hero-svg"
+                viewBox="0 0 400 300"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- Background elements -->
+                <circle
+                  cx="80"
+                  cy="60"
+                  r="45"
+                  fill="rgba(107, 155, 209, 0.08)"
+                  class="float-animation"
+                />
+                <circle
+                  cx="320"
+                  cy="50"
+                  r="30"
+                  fill="rgba(74, 144, 226, 0.12)"
+                  class="float-animation-delayed"
+                />
+                <circle
+                  cx="360"
+                  cy="220"
+                  r="40"
+                  fill="rgba(107, 155, 209, 0.06)"
+                  class="float-animation-slow"
+                />
+                <circle
+                  cx="50"
+                  cy="250"
+                  r="25"
+                  fill="rgba(74, 144, 226, 0.1)"
+                  class="float-animation-delayed"
+                />
+
+                <!-- Grid pattern overlay -->
+                <defs>
+                  <pattern
+                    id="grid"
+                    x="0"
+                    y="0"
+                    width="20"
+                    height="20"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M 20 0 L 0 0 0 20"
+                      fill="none"
+                      stroke="#6B9BD1"
+                      stroke-width="0.2"
+                      opacity="0.3"
+                    />
+                  </pattern>
+                </defs>
+                <rect
+                  x="0"
+                  y="0"
+                  width="100%"
+                  height="100%"
+                  fill="url(#grid)"
+                  class="fade-in-animation"
+                />
+
+                <!-- Main network nodes -->
+                <circle
+                  cx="200"
+                  cy="120"
+                  r="10"
+                  fill="#4A90E2"
+                  class="pulse-animation-strong"
+                />
+                <circle
+                  cx="100"
+                  cy="80"
+                  r="8"
+                  fill="#6B9BD1"
+                  class="pulse-animation"
+                />
+                <circle
+                  cx="300"
+                  cy="90"
+                  r="8"
+                  fill="#4A90E2"
+                  class="pulse-animation-delayed"
+                />
+                <circle
+                  cx="80"
+                  cy="180"
+                  r="7"
+                  fill="#6B9BD1"
+                  class="pulse-animation-slow"
+                />
+                <circle
+                  cx="320"
+                  cy="160"
+                  r="7"
+                  fill="#4A90E2"
+                  class="pulse-animation"
+                />
+                <circle
+                  cx="150"
+                  cy="220"
+                  r="6"
+                  fill="#6B9BD1"
+                  class="pulse-animation-delayed"
+                />
+                <circle
+                  cx="250"
+                  cy="200"
+                  r="6"
+                  fill="#4A90E2"
+                  class="pulse-animation-slow"
+                />
+                <circle
+                  cx="60"
+                  cy="120"
+                  r="5"
+                  fill="#6B9BD1"
+                  class="pulse-animation"
+                />
+                <circle
+                  cx="340"
+                  cy="120"
+                  r="5"
+                  fill="#4A90E2"
+                  class="pulse-animation-delayed"
+                />
+
+                <!-- Secondary network nodes -->
+                <circle
+                  cx="130"
+                  cy="50"
+                  r="4"
+                  fill="#6B9BD1"
+                  opacity="0.8"
+                  class="pulse-animation-subtle"
+                />
+                <circle
+                  cx="270"
+                  cy="40"
+                  r="4"
+                  fill="#4A90E2"
+                  opacity="0.8"
+                  class="pulse-animation-subtle-delayed"
+                />
+                <circle
+                  cx="180"
+                  cy="260"
+                  r="4"
+                  fill="#6B9BD1"
+                  opacity="0.8"
+                  class="pulse-animation-subtle"
+                />
+                <circle
+                  cx="220"
+                  cy="270"
+                  r="4"
+                  fill="#4A90E2"
+                  opacity="0.8"
+                  class="pulse-animation-subtle-delayed"
+                />
+
+                <!-- Connection lines - Primary -->
+                <line
+                  x1="200"
+                  y1="120"
+                  x2="100"
+                  y2="80"
+                  stroke="#6B9BD1"
+                  stroke-width="2.5"
+                  opacity="0.7"
+                  class="draw-animation"
+                />
+                <line
+                  x1="200"
+                  y1="120"
+                  x2="300"
+                  y2="90"
+                  stroke="#4A90E2"
+                  stroke-width="2.5"
+                  opacity="0.7"
+                  class="draw-animation-delayed"
+                />
+                <line
+                  x1="200"
+                  y1="120"
+                  x2="80"
+                  y2="180"
+                  stroke="#6B9BD1"
+                  stroke-width="2"
+                  opacity="0.6"
+                  class="draw-animation-slow"
+                />
+                <line
+                  x1="200"
+                  y1="120"
+                  x2="320"
+                  y2="160"
+                  stroke="#4A90E2"
+                  stroke-width="2"
+                  opacity="0.6"
+                  class="draw-animation-delayed-slow"
+                />
+                <line
+                  x1="200"
+                  y1="120"
+                  x2="150"
+                  y2="220"
+                  stroke="#6B9BD1"
+                  stroke-width="1.5"
+                  opacity="0.5"
+                  class="draw-animation"
+                />
+                <line
+                  x1="200"
+                  y1="120"
+                  x2="250"
+                  y2="200"
+                  stroke="#4A90E2"
+                  stroke-width="1.5"
+                  opacity="0.5"
+                  class="draw-animation-delayed"
+                />
+
+                <!-- Connection lines - Secondary -->
+                <line
+                  x1="100"
+                  y1="80"
+                  x2="80"
+                  y2="180"
+                  stroke="#6B9BD1"
+                  stroke-width="1.5"
+                  opacity="0.4"
+                  class="draw-animation-slow"
+                />
+                <line
+                  x1="300"
+                  y1="90"
+                  x2="320"
+                  y2="160"
+                  stroke="#4A90E2"
+                  stroke-width="1.5"
+                  opacity="0.4"
+                  class="draw-animation-slow"
+                />
+                <line
+                  x1="150"
+                  y1="220"
+                  x2="250"
+                  y2="200"
+                  stroke="#6B9BD1"
+                  stroke-width="1"
+                  opacity="0.3"
+                  class="draw-animation-delayed"
+                />
+                <line
+                  x1="60"
+                  y1="120"
+                  x2="100"
+                  y2="80"
+                  stroke="#6B9BD1"
+                  stroke-width="1"
+                  opacity="0.3"
+                  class="draw-animation"
+                />
+                <line
+                  x1="340"
+                  y1="120"
+                  x2="300"
+                  y2="90"
+                  stroke="#4A90E2"
+                  stroke-width="1"
+                  opacity="0.3"
+                  class="draw-animation-delayed"
+                />
+
+                <!-- Central hub with multiple rings -->
+                <circle
+                  cx="200"
+                  cy="120"
+                  r="25"
+                  fill="none"
+                  stroke="#6B9BD1"
+                  stroke-width="2"
+                  opacity="0.6"
+                  class="expand-animation"
+                />
+                <circle
+                  cx="200"
+                  cy="120"
+                  r="18"
+                  fill="none"
+                  stroke="#4A90E2"
+                  stroke-width="2"
+                  opacity="0.8"
+                  class="expand-animation-delayed"
+                />
+                <circle
+                  cx="200"
+                  cy="120"
+                  r="35"
+                  fill="none"
+                  stroke="#6B9BD1"
+                  stroke-width="1"
+                  opacity="0.3"
+                  class="expand-animation-slow"
+                />
+                <circle cx="200" cy="120" r="14" fill="#4A90E2" opacity="0.9" />
+                <circle
+                  cx="200"
+                  cy="120"
+                  r="8"
+                  fill="white"
+                  opacity="0.3"
+                  class="pulse-inner"
+                />
+
+                <!-- Technology clusters -->
+                <g class="tech-cluster" transform="translate(70, 30)">
+                  <circle
+                    cx="5"
+                    cy="20"
+                    r="12"
+                    fill="rgba(107, 155, 209, 0.2)"
+                    class="cluster-pulse"
+                  />
+                  <rect
+                    x="-4"
+                    y="20"
+                    width="24"
+                    height="16"
+                    rx="3"
+                    fill="#6B9BD1"
+                    opacity="0.8"
+                  />
+                  <text
+                    x="8"
+                    y="28"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    fill="white"
+                    font-size="8"
+                    font-weight="bold"
+                  >
+                    6G
+                  </text>
+                  <circle
+                    cx="8"
+                    cy="-8"
+                    r="2"
+                    fill="#4A90E2"
+                    class="blink-animation"
+                  />
+                </g>
+
+                <g class="tech-cluster" transform="translate(330, 30)">
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="12"
+                    fill="rgba(74, 144, 226, 0.2)"
+                    class="cluster-pulse-delayed"
+                  />
+                  <circle cx="-9" cy="20" r="12" fill="#4A90E2" opacity="0.8" />
+                  <text
+                    x="-9"
+                    y="20"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    fill="white"
+                    font-size="9"
+                    font-weight="bold"
+                  >
+                    PQC
+                  </text>
+                  <circle
+                    cx="10"
+                    cy="-6"
+                    r="1.5"
+                    fill="#6B9BD1"
+                    class="blink-animation-delayed"
+                  />
+                  <circle
+                    cx="-8"
+                    cy="8"
+                    r="1.5"
+                    fill="#6B9BD1"
+                    class="blink-animation"
+                  />
+                </g>
+
+                <g class="tech-cluster" transform="translate(350, 250)">
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="10"
+                    fill="rgba(107, 155, 209, 0.2)"
+                    class="cluster-pulse"
+                  />
+                  <!-- 3D Cube -->
+                  <!-- Front face -->
+                  <rect
+                    x="-6"
+                    y="-34"
+                    width="16"
+                    height="12"
+                    fill="#6B9BD1"
+                    opacity="0.9"
+                  />
+                  <!-- Top face -->
+                  <polygon
+                    points="-6,-34 -2,-38 14,-38 10,-34"
+                    fill="#4A90E2"
+                    opacity="0.8"
+                  />
+                  <!-- Right face -->
+                  <polygon
+                    points="10,-34 14,-38 14,-26 10,-22"
+                    fill="#5BA3D6"
+                    opacity="0.7"
+                  />
+                  <circle cx="5" cy="-30" r="3" fill="white" />
+                  <circle
+                    cx="6"
+                    cy="-10"
+                    r="1.5"
+                    fill="#4A90E2"
+                    class="orbit-animation"
+                  />
+                  <circle
+                    cx="-6"
+                    cy="10"
+                    r="1.5"
+                    fill="#4A90E2"
+                    class="orbit-animation-reverse"
+                  />
+                </g>
+
+                <g class="tech-cluster" transform="translate(50, 250)">
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="10"
+                    fill="rgba(74, 144, 226, 0.2)"
+                    class="cluster-pulse-delayed"
+                  />
+                  <rect
+                    x="-8"
+                    y="-4"
+                    width="16"
+                    height="8"
+                    rx="2"
+                    fill="#4A90E2"
+                    opacity="0.8"
+                  />
+                  <circle cx="-4" cy="0" r="2" fill="white" opacity="0.8" />
+                  <circle cx="4" cy="0" r="2" fill="white" opacity="0.8" />
+                  <circle
+                    cx="0"
+                    cy="-12"
+                    r="1"
+                    fill="#6B9BD1"
+                    class="float-dot"
+                  />
+                  <circle
+                    cx="0"
+                    cy="12"
+                    r="1"
+                    fill="#6B9BD1"
+                    class="float-dot-delayed"
+                  />
+                </g>
+
+                <!-- Signal waves -->
+                <g class="signal-waves">
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="50"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="1"
+                    opacity="0"
+                    class="wave-animation"
+                  ></circle>
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="70"
+                    fill="none"
+                    stroke="#4A90E2"
+                    stroke-width="1"
+                    opacity="0"
+                    class="wave-animation-delayed"
+                  ></circle>
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="90"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="1"
+                    opacity="0"
+                    class="wave-animation-slow"
+                  ></circle>
+                </g>
+
+                <!-- Additional Complex Elements -->
+                <!-- Rotating orbital rings around main hub -->
+                <g class="orbital-rings">
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="50"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="1"
+                    opacity="0.3"
+                    stroke-dasharray="3,3"
+                    class="orbit-ring-1"
+                  />
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="65"
+                    fill="none"
+                    stroke="#4A90E2"
+                    stroke-width="1"
+                    opacity="0.2"
+                    stroke-dasharray="5,5"
+                    class="orbit-ring-2"
+                  />
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="80"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="0.8"
+                    opacity="0.15"
+                    stroke-dasharray="2,4"
+                    class="orbit-ring-3"
+                  />
+                </g>
+
+                <!-- Signal wave propagation -->
+                <g class="signal-waves">
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="40"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="2"
+                    opacity="0"
+                    class="wave-1"
+                  />
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="60"
+                    fill="none"
+                    stroke="#4A90E2"
+                    stroke-width="2"
+                    opacity="0"
+                    class="wave-2"
+                  />
+                  <circle
+                    cx="200"
+                    cy="120"
+                    r="90"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="2"
+                    opacity="0"
+                    class="wave-3"
+                  />
+                </g>
+
+                <!-- Network activity indicators -->
+                <g class="activity-indicators">
+                  <rect
+                    x="50"
+                    y="40"
+                    width="3"
+                    height="12"
+                    fill="#6B9BD1"
+                    opacity="0.8"
+                    class="bar-1"
+                    rx="1"
+                  />
+                  <rect
+                    x="55"
+                    y="35"
+                    width="3"
+                    height="17"
+                    fill="#4A90E2"
+                    opacity="0.8"
+                    class="bar-2"
+                    rx="1"
+                  />
+                  <rect
+                    x="60"
+                    y="30"
+                    width="3"
+                    height="22"
+                    fill="#6B9BD1"
+                    opacity="0.8"
+                    class="bar-3"
+                    rx="1"
+                  />
+                  <rect
+                    x="65"
+                    y="38"
+                    width="3"
+                    height="14"
+                    fill="#4A90E2"
+                    opacity="0.8"
+                    class="bar-4"
+                    rx="1"
+                  />
+
+                  <rect
+                    x="330"
+                    y="240"
+                    width="3"
+                    height="10"
+                    fill="#4A90E2"
+                    opacity="0.8"
+                    class="bar-5"
+                    rx="1"
+                  />
+                  <rect
+                    x="335"
+                    y="235"
+                    width="3"
+                    height="15"
+                    fill="#6B9BD1"
+                    opacity="0.8"
+                    class="bar-6"
+                    rx="1"
+                  />
+                  <rect
+                    x="340"
+                    y="230"
+                    width="3"
+                    height="20"
+                    fill="#4A90E2"
+                    opacity="0.8"
+                    class="bar-7"
+                    rx="1"
+                  />
+                  <rect
+                    x="345"
+                    y="238"
+                    width="3"
+                    height="12"
+                    fill="#6B9BD1"
+                    opacity="0.8"
+                    class="bar-8"
+                    rx="1"
+                  />
+                </g>
+
+                <!-- Hexagonal mesh pattern -->
+                <g class="hex-mesh" opacity="0.1">
+                  <polygon
+                    points="120,60 130,54 140,60 140,72 130,78 120,72"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="1"
+                    class="hex-fade-1"
+                  />
+                  <polygon
+                    points="280,180 290,174 300,180 300,192 290,198 280,192"
+                    fill="none"
+                    stroke="#4A90E2"
+                    stroke-width="1"
+                    class="hex-fade-2"
+                  />
+                  <polygon
+                    points="160,240 170,234 180,240 180,252 170,258 160,252"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="1"
+                    class="hex-fade-3"
+                  />
+                  <polygon
+                    points="240,50 250,44 260,50 260,62 250,68 240,62"
+                    fill="none"
+                    stroke="#4A90E2"
+                    stroke-width="1"
+                    class="hex-fade-4"
+                  />
+                </g>
+
+                <!-- Pulsing connection hubs -->
+                <g class="connection-hubs">
+                  <circle
+                    cx="120"
+                    cy="200"
+                    r="8"
+                    fill="rgba(107, 155, 209, 0.3)"
+                    class="hub-pulse-1"
+                  />
+                  <circle
+                    cx="120"
+                    cy="200"
+                    r="4"
+                    fill="#6B9BD1"
+                    opacity="0.8"
+                  />
+                  <circle
+                    cx="120"
+                    cy="200"
+                    r="2"
+                    fill="white"
+                    opacity="0.6"
+                    class="hub-inner-pulse"
+                  />
+
+                  <circle
+                    cx="280"
+                    cy="70"
+                    r="8"
+                    fill="rgba(74, 144, 226, 0.3)"
+                    class="hub-pulse-2"
+                  />
+                  <circle cx="280" cy="70" r="4" fill="#4A90E2" opacity="0.8" />
+                  <circle
+                    cx="280"
+                    cy="70"
+                    r="2"
+                    fill="white"
+                    opacity="0.6"
+                    class="hub-inner-pulse-delayed"
+                  />
+                </g>
+
+                <!-- Quantum entanglement lines -->
+                <g class="quantum-lines">
+                  <path
+                    d="M100,80 Q150,120 200,120 Q250,120 300,90"
+                    fill="none"
+                    stroke="#6B9BD1"
+                    stroke-width="1"
+                    opacity="0.5"
+                    stroke-dasharray="2,2"
+                    class="quantum-flow-1"
+                  />
+                  <path
+                    d="M80,180 Q140,140 200,120 Q260,100 320,160"
+                    fill="none"
+                    stroke="#4A90E2"
+                    stroke-width="1"
+                    opacity="0.5"
+                    stroke-dasharray="3,3"
+                    class="quantum-flow-2"
+                  />
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
+      </section>
+
+      <!-- Research Areas Section -->
+      <section class="research-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Research Domains</h2>
+          </div>
+
+          <div class="research-carousel-container">
+            <div class="research-carousel-track" id="research-track">
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M3 21h18" />
+                      <path d="M5 21V7l8-4v18" />
+                      <path d="M19 21V11l-6-4" />
+                      <path d="M9 9v.01" />
+                      <path d="M9 12v.01" />
+                      <path d="M9 15v.01" />
+                      <path d="M9 18v.01" />
+                      <path d="M15 15v.01" />
+                      <path d="M15 18v.01" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Telecom Architecture</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Next-generation telecommunications infrastructure with
+                    cloud-native 5G Core implementations, Open RAN
+                    architectures, and quantum-safe security protocols.
+                  </p>
+                  <a
+                    href="pages/expertise/telecom-architecture"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+                      />
+                      <rect x="10" y="9" width="4" height="4" rx="1" />
+                      <path d="M10 9V7a2 2 0 014 0v2" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Quantum-Safe Security</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Post-quantum cryptography implementations, NIST-compliant
+                    quantum-resistant algorithms, and crypto-agility frameworks
+                    for telecommunications infrastructure protection.
+                  </p>
+                  <a
+                    href="pages/expertise/quantum-security"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <ellipse cx="12" cy="11" rx="4" ry="6" />
+                      <path d="M7 8l-3-2" />
+                      <path d="M17 8l3-2" />
+                      <path d="M7 14l-3 2" />
+                      <path d="M17 14l3 2" />
+                      <circle cx="10" cy="8" r="1" />
+                      <circle cx="14" cy="8" r="1" />
+                      <path d="M8 10h8" />
+                      <path d="M8 12h8" />
+                      <path d="M8 14h8" />
+                    </svg>
+                  </div>
+
+                  <div class="card-title-section">
+                    <h3>eBPF Engineering</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    In-kernel programmability solutions with high-performance
+                    packet processing, runtime security monitoring, and advanced
+                    observability tools for modern infrastructures.
+                  </p>
+                  <a
+                    href="pages/expertise/ebpf-engineering"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="8" y1="21" x2="16" y2="21" />
+                      <line x1="12" y1="17" x2="12" y2="21" />
+                      <circle cx="7" cy="9" r="1" />
+                      <circle cx="12" cy="9" r="1" />
+                      <circle cx="17" cy="9" r="1" />
+                      <line x1="5" y1="13" x2="19" y2="13" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Network Deployment</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    End-to-end private 5G deployments, O-RAN testbeds with 7.2
+                    O-RU implementations, and automated network maintenance for
+                    reliable telecommunications infrastructure.
+                  </p>
+                  <a
+                    href="pages/expertise/network-deployment"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <circle cx="12" cy="12" r="3" />
+                      <circle cx="6" cy="6" r="2" />
+                      <circle cx="18" cy="6" r="2" />
+                      <circle cx="6" cy="18" r="2" />
+                      <circle cx="18" cy="18" r="2" />
+                      <path d="M8.21 8.21l2.83 2.83" />
+                      <path d="M15.79 8.21l-2.83 2.83" />
+                      <path d="M8.21 15.79l2.83-2.83" />
+                      <path d="M15.79 15.79l-2.83-2.83" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Multi-Vendor Integration</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Cross-vendor 5G interoperability, Open RAN multi-vendor
+                    ecosystems, and vendor-independent radio solutions enabling
+                    seamless telecommunications integration.
+                  </p>
+                  <a
+                    href="pages/expertise/multi-vendor-integration"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Duplicate cards for seamless infinite scroll -->
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M3 21h18" />
+                      <path d="M5 21V7l8-4v18" />
+                      <path d="M19 21V11l-6-4" />
+                      <path d="M9 9v.01" />
+                      <path d="M9 12v.01" />
+                      <path d="M9 15v.01" />
+                      <path d="M9 18v.01" />
+                      <path d="M15 15v.01" />
+                      <path d="M15 18v.01" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Telecom Architecture</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Next-generation telecommunications infrastructure with
+                    cloud-native 5G Core implementations, Open RAN
+                    architectures, and quantum-safe security protocols.
+                  </p>
+                  <a
+                    href="pages/expertise/telecom-architecture"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+                      />
+                      <rect x="10" y="9" width="4" height="4" rx="1" />
+                      <path d="M10 9V7a2 2 0 014 0v2" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Quantum-Safe Security</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Post-quantum cryptography implementations, NIST-compliant
+                    quantum-resistant algorithms, and crypto-agility frameworks
+                    for telecommunications infrastructure protection.
+                  </p>
+                  <a
+                    href="pages/expertise/quantum-security"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <ellipse cx="12" cy="11" rx="4" ry="6" />
+                      <path d="M7 8l-3-2" />
+                      <path d="M17 8l3-2" />
+                      <path d="M7 14l-3 2" />
+                      <path d="M17 14l3 2" />
+                      <circle cx="10" cy="8" r="1" />
+                      <circle cx="14" cy="8" r="1" />
+                      <path d="M8 10h8" />
+                      <path d="M8 12h8" />
+                      <path d="M8 14h8" />
+                    </svg>
+                  </div>
+
+                  <div class="card-title-section">
+                    <h3>eBPF Engineering</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    In-kernel programmability solutions with high-performance
+                    packet processing, runtime security monitoring, and advanced
+                    observability tools for modern infrastructures.
+                  </p>
+                  <a
+                    href="pages/expertise/ebpf-engineering"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="8" y1="21" x2="16" y2="21" />
+                      <line x1="12" y1="17" x2="12" y2="21" />
+                      <circle cx="7" cy="9" r="1" />
+                      <circle cx="12" cy="9" r="1" />
+                      <circle cx="17" cy="9" r="1" />
+                      <line x1="5" y1="13" x2="19" y2="13" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Network Deployment</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    End-to-end private 5G deployments, O-RAN testbeds with 7.2
+                    O-RU implementations, and automated network maintenance for
+                    reliable telecommunications infrastructure.
+                  </p>
+                  <a
+                    href="pages/expertise/network-deployment"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="research-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <circle cx="12" cy="12" r="3" />
+                      <circle cx="6" cy="6" r="2" />
+                      <circle cx="18" cy="6" r="2" />
+                      <circle cx="6" cy="18" r="2" />
+                      <circle cx="18" cy="18" r="2" />
+                      <path d="M8.21 8.21l2.83 2.83" />
+                      <path d="M15.79 8.21l-2.83 2.83" />
+                      <path d="M8.21 15.79l2.83-2.83" />
+                      <path d="M15.79 15.79l-2.83-2.83" />
+                    </svg>
+                  </div>
+                  <div class="card-title-section">
+                    <h3>Multi-Vendor Integration</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Cross-vendor 5G interoperability, Open RAN multi-vendor
+                    ecosystems, and vendor-independent radio solutions enabling
+                    seamless telecommunications integration.
+                  </p>
+                  <a
+                    href="pages/expertise/multi-vendor-integration"
+                    class="card-button"
+                  >
+                    <span>Learn More</span>
+                    <svg
+                      class="btn-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
+      </section>
+
+      <!-- Enhanced Community Section -->
+      <section class="community-section">
+        <div class="container">
+          <div class="community-content">
+            <!-- Community Header -->
+            <div class="community-header">
+              <h2 class="community-title">Join Our Community</h2>
+            </div>
+
+            <!-- Community Testimonial -->
+            <div class="community-testimonial">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
+                    />
+                  </svg>
+                </div>
+                <blockquote>
+                  "NgKore is more than just a project—it's a global, open
+                  ecosystem where collaboration fuels innovation. When you join
+                  us, you gain access to a diverse and growing network of
+                  contributors who learn openly, mentor one another, and build
+                  impactful solutions together. You'll enhance your skills—not
+                  only technically but also in communication, documentation, and
+                  community leadership—by working on real-world challenges
+                  alongside experienced members. Every contribution—be it code,
+                  documentation, or ideas—drives progress and creates visible
+                  value that can shape future technologies and open platforms.
+                  Whether you're just starting out or an industry expert, NgKore
+                  offers a welcoming environment to grow, connect, and make a
+                  meaningful impact."
+                </blockquote>
+                <!-- <div class="testimonial-author"></div> -->
+              </div>
+            </div>
+
+            <br /><br />
+
+            <!-- Community Stats -->
+            <div class="community-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-count="17">0</div>
+                <div class="stat-label">Community Engagements</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="71">0</div>
+                <div class="stat-label">Github Projects</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">Hosted Events</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="40">0</div>
+                <div class="stat-label">Technical Documentation</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-</div> -->
+      </section>
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section> -->
-
-<div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="Projects">
-          <h1> Our Projects </h1>
-          <!-- <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
+      <!-- Solutions & Capabilities Section -->
+      <section class="solutions-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Get Involved</h2>
+            <!-- <p class="section-subtitle">
+              Comprehensive telecommunications solutions spanning architecture
+              design, security implementation, and deployment services
             </p> -->
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><img src="images/private.jpg" class="img-fluid" style="max-width: 100%;" alt="Private 5G"></span>
-            <h6>Private 5G</h6>
-            <p>As A Research Organization, NgKore Is Committed To Exploring And Innovating In The Field Of 5G Technology. In Addition To <b>Deploying Our Own 5G Core</b> , We Are Constantly Seeking New Ways To Enhance The Performance, Efficiency, And Reliability Of 5G Systems.</p>
+          </div>
+
+          <div class="solutions-preview">
+            <div class="solution-card primary">
+              <div class="solution-content">
+                <div class="solution-icon">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12,2C17.5,2 22,6.5 22,12C22,17.5 17.5,22 12,22C6.5,22 2,17.5 2,12C2,6.5 6.5,2 12,2M12,4C7.6,4 4,7.6 4,12C4,16.4 7.6,20 12,20C16.4,20 20,16.4 20,12C20,7.6 16.4,4 12,4M13,9H11V7H13V9M13,17H11V11H13V17Z"
+                    />
+                  </svg>
+                </div>
+                <h3>Implementation Research</h3>
+                <div class="content-section">
+                  <p>
+                    Innovative research and practical implementations across
+                    emerging technologies, including quantum-safe systems,
+                    cloud-native architectures, distributed platforms, and
+                    scalable next-generation solutions.
+                  </p>
+                  <a href="pages/expertise" class="solution-link"
+                    >Explore Expertise</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-icon">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,17H7V15H17V17M17,13H7V11H17V13M17,9H7V7H17V9Z"
+                    />
+                  </svg>
+                </div>
+                <h3>Technical Documentation</h3>
+                <div class="content-section">
+                  <p>
+                    Detailed guides, architectural blueprints, and best
+                    practices to support developers and researchers in building,
+                    integrating, and scaling advanced open-source technologies.
+                  </p>
+                  <a
+                    href="https://docs.ngkore.org"
+                    class="solution-link"
+                    target="_blank"
+                    >Access Docs</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-icon">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5h6c.83 0 1.5.67 1.5 1.5V18h2v-4h3v4h4v2H0v-2h4z"
+                    />
+                  </svg>
+                </div>
+                <h3>Professional Consulting</h3>
+                <div class="content-section">
+                  <p>
+                    Strategic technical guidance for organizations exploring
+                    modernization, open-source adoption, emerging technology
+                    integration, and long-term innovation planning.
+                  </p>
+                  <a href="pages/contact" class="solution-link"
+                    >Contact Us</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><img src="images/Oran.png"></span>
-            <h6>ORAN</h6>
-            <p>ORAN (Open Radio Access Network) Is A New Approach To Designing And Building Mobile Networks, Specifically 5G Networks, That Aims To Increase Flexibility, Reduce Costs, And Promote Innovation. ORAN Uses Open And Interoperable Interfaces And Standard Hardware And Software Components To Allow For Greater Flexibility In Building And Deploying Mobile Networks</p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-background-layers">
+          <div class="cta-layer-1"></div>
+          <div class="cta-layer-2"></div>
+          <div class="cta-network-pattern"></div>
+        </div>
+        <div class="container">
+          <div class="cta-content">
+            <h2>Support Our Work</h2>
+            <div class="cta-description">
+              <p class="cta-main-text">
+                By sponsoring NgKore, you help sustain a vibrant open-source
+                ecosystem committed to innovation, transparency, and global
+                collaboration. Your support directly fuels development,
+                community growth, and long-term impact—while aligning your brand
+                with meaningful, forward-thinking initiatives.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-laptop"></i></span>
-            <h6>SDR</h6>
-            <p>SDR Stands For Software-Defined Radio. It Is A Radio Communication System Where The Traditional Hardware Components Of A Radio Such As Filters, Amplifiers, And Modulators Are Replaced By Software. SDR Technology Plays An Important Role In The Development And Deployment Of 5G Networks. One Of The Key Advantages Of SDR Is That It Allows For Greater Flexibility In Adapting The Network To Changing Conditions And Requirements.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+      </section>
+    </main>
 
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="Communities"><span>Our</span> Communities</h4>
-          
-          <p> We are committed to continuing our contributions to the open-source community, and believe that <br>collaboration and knowledge-sharing<br>
-            are essential to the advancement of any technology.
-            </p>
-        </div>
+    <!-- Include Footer Component -->
+    <div id="footer-container"></div>
 
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_four"><img src="images/magma.jpeg"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://magmaindia.org/" target="_blank">Magma India</a></h6>
-              <p>Magma India is a community of collaborators coming from diverse professional backgrounds of Academy, Research and industry who are passionate towards cultivating environment of open, collaborative and an integrated ecosystem the objective is to build an unified platform where open source projects related to 5G can be evangelized through research, development, education and advocacy<br><br><br></p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-sm-6">
-            <div class="item">  <span class="icon feature_box_col_four"><img src="images/OIP.jpeg"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://oiplabs.org/" target="_blank">Oiplabs</a></h6>
-              <p>OIPLABS Aims To Provide A Neutral Environment To Foster Interoperability, Standards Conformance, And Development For The Interconnected World, While Attracting Students And Preparing Them For Careers In Cutting-Edge Technology. To Create An Interoperable World By Enabling The Best Engineers, Entrepreneurs, And Technology..<br><br><br></p>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><img src="images/Kupenstack.png"></span>
-            <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://kupenstack.io/" target="_blank">Kupenstack</a></h6>
-            <p>KupenStack is an open-source project that provides Kubernetes-native OpenStack on top of a Kubernetes cluster, in form of containerized Openstack cluster. With a vision of lifecycle management and usage through custom resources in Kubernetes thus abstracting Openstack complexities and automating IaaS use cases.<br><br><br></p>
-            
-            <p><br><br><br></p>
-          </div>
-        </div>
-        
-       
-        
-      </div>
-    </div>
-</div>
-
- <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="Resources">
-          <h1> Resources </h1>
-          <p>Go Ahead And Explore Our Collection Of Thought-Provoking And Informative Articles And Videos, And Join Us On Our Journey To Explore The Limitless Possibilities Of Technology.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_four"><img src="images/sdcore-af.jpg"class="img-fluid" style="max-width: 100%;" alt="SDcore In AF_packet mode"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://youtu.be/zq_0WRuIND0?si=R2RdZv39yebbsNbr" target="_blank">SDcore In AF_packet mode</a></h6>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_four"><img src="images/OAI.jpg"class="img-fluid" style="max-width: 100%;" alt="OAI Core"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://youtu.be/CIVi6MsGT2U?si=J1LX50reaBFMQiSi" target="_blank">OAI Core</a></h6>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_four"><img src="images/SDcore_dpdk.jpg"class="img-fluid" style="max-width: 100%;" alt="SD-Core Deployment Using DPDK And SR-IOV Mode"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://youtu.be/Z6fz2PHkcL8?si=NW6Xv33TwjxoAPXY" target="_blank">SD-Core Deployment Using DPDK And SR-IOV Mode</a></h6>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_four"><img src="images/sdcore-cndp.jpg"class="img-fluid" style="max-width: 100%;" alt="CNDP Integration With UPF And Benchmarking"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://youtu.be/Tay7Wuf3bRs?si=94YgmL8aDhJ8amUe" target="_blank">CNDP Integration With UPF And Benchmarking</a></h6>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_four"><img src="images/leaf.jpg"class="img-fluid" style="max-width: 100%;" alt="L3AF Deployment And Integration With UPF"></span>
-              <h6 style="margin-top: 15px; font-weight: bold;"><a href="https://youtu.be/Unp_wAyPkBQ?si=2YY4Pqupv27_F3cg" target="_blank">L3AF Deployment And Integration With UPF</a></h6>
-            </div>
-        </div>
-
-
-      </div>
-    </div>
-</div>
-
-<!-- <div class="communicate">
-    <h3>Have A Question, Suggestion, Or Just Want To Say Hello? We'd Love To Hear From You!.</h3>
-    <p>Our Team Is Always Here To Help You With Any Queries You May Have, And We're Just A Click Away!.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div> -->
-
-<!-- <div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Advisors</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div> -->
-<a href="index.html#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="Members">Community Members</h1>
-  <p></p>
-    <div class="row">
-        <div class="card">
-            <div class="image">
-                <img src="images/Vipin.jpeg" alt="Team member 1">
-            </div>
-            <div class="info">
-                <h3>Vipin Rathi</h3>
-                <!-- <span>Web Developer</span> -->
-                <div class="icons">
-                    <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                    <a href="https://github.com/viprat" class="fab fa-github"></a>
-                    <a href="https://www.linkedin.com/in/vipratos/" class="fab fa-linkedin"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card">
-            <div class="image">
-                <img src="images/Nitin.jpg" alt="Team member 1">
-            </div>
-            <div class="info">
-                <h3>Nitin Rajput</h3>
-                <!-- <span>Mobile Developer</span> -->
-                <div class="icons">
-                    <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                    <a href="https://github.com/nitinrajput1997" class="fab fa-github"></a>
-                    <a href="https://www.linkedin.com/in/nitin-rajput-3a321114b/" class="fab fa-linkedin"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card">
-            <div class="image">
-                <img src="images/Shivank.jpeg" alt="Team member 1">
-            </div>
-            <div class="info">
-                <h3>Shivank Chaudhary</h3>
-                <!-- <span>Graphic Designer</span> -->
-                <div class="icons">
-                    <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                    <a href="https://github.com/Alt-Shivam" class="fab fa-github"></a>
-                    <a href="https://www.linkedin.com/in/shivank1128/" class="fab fa-linkedin"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card">
-            <div class="image">
-                <img src="images/Wafi.jpg" alt="Team member 1">
-            </div>
-            <div class="info">
-                <h3>Wafi Hasan</h3>
-                <!-- <span>Web Designer</span> -->
-                <div class="icons">
-                    <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                    <a href="https://github.com/wafi981" class="fab fa-github"></a>
-                    <a href="https://www.linkedin.com/in/wafi-hasan-334b3520a/" class="fab fa-linkedin"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-    <div class="card">
-        <div class="image">
-            <img src="images/Aditya.jpeg" alt="Team member 1">
-        </div>
-        <div class="info">
-            <h3>Aditya Koranga</h3>
-            <!-- <span>Mobile Developer</span> -->
-            <div class="icons">
-                <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                <a href="https://github.com/AdityaKoranga" class="fab fa-github"></a>
-                <a href="https://www.linkedin.com/in/aditya-koranga-061517220/" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="card">
-        <div class="image">
-            <img src="images/Shubham.jpeg" alt="Team member 1">
-        </div>
-        <div class="info">
-            <h3>Shubham Kumar</h3>
-            <!-- <span>Mobile Developer</span> -->
-            <div class="icons">
-                <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                <a href="https://github.com/ShubhamKumar89" class="fab fa-github"></a>
-                <a href="https://www.linkedin.com/in/shubham-kumar-31b134226/" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="card">
-        <div class="image">
-            <img src="images/shankar2.png" alt="Team member 1">
-        </div>
-        <div class="info">
-            <h3>Shankar Malik</h3>
-            <!-- <span>Mobile Developer</span> -->
-            <div class="icons">
-                <!-- <a href="httpsfa-android.com/login" class="fa-duatone fa-envelope"></a> -->
-                <a href="https://github.com/evershalik" class="fab fa-github"></a>
-                <a href="https://www.linkedin.com/in/shankar-malik/" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-    </div>
-    </div>  
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="https://ngkore.com/contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>What Is The Difference Between Private And Public 5G Networks?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Public 5G Networks Are Operated By Telecommunication Companies And Are Available To The General Public. Private 5G Networks Are Owned And Operated By Businesses Or Organizations For Their Own Use And Are Not Accessible To The Public.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>What Are The Benefits Of Private 5G Networks?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Private 5G Networks Offer Several Benefits, Including Enhanced Security, Increased Reliability, Greater Control Over Network Performance, And The Ability To Customize The Network To Meet Specific Business Needs.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>What Types Of Businesses Might Benefit From A Private 5G Network?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Any Business That Relies On High-Speed, Low-Latency Connectivity For Mission-Critical Applications Could Potentially Benefit From A Private 5G Network. This Includes Industries Such As Manufacturing, Logistics, Healthcare, And Transportation, Among Others.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How Does 5G Differ From Previous Generations Of Wireless Technology?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>5G Offers Several Key Improvements Over Previous Generations Of Wireless Technology, Including Faster Speeds, Lower Latency, Greater Capacity, And The Ability To Support A Larger Number Of Connected Devices.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How Will 5G Impact The Internet Of Things (IoT)?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>5G Is Expected To Have A Significant Impact On The IoT, As It Will Enable A Greater Number Of Connected Devices To Operate Simultaneously And With Lower Latency, Which Will Be Particularly Important For Applications That Require Real-Time Communication.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#service"> Resources </a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="https://www.youtube.com/@NgKore" target="_blank">Youtube</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="../docs.ngkore.com/index.html" target="_blank">Docs</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                         
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="index.html" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2023 Ngkore. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="index.html#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-</body>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
