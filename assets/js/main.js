@@ -65,7 +65,7 @@ function animateCounter(element, target, duration = 2000) {
     element.textContent = Math.floor(current);
 
     if (current >= target) {
-      element.textContent = target;
+      element.textContent = target + "+";
       clearInterval(timer);
     }
   }, 16);

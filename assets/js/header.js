@@ -64,7 +64,7 @@ function configureHeader(basePath) {
         'home-link': basePath || '/',
         'about-link': `${basePath}pages/about`,
         'products-link': `${basePath}pages/expertise`,
-        'news-link': `${basePath}pages/news`,
+        'announcements-link': `${basePath}pages/announcements`,
         'docs-link': 'https://docs.ngkore.org',
         'contact-link': `${basePath}pages/contact`
     };

@@ -32,16 +32,36 @@ jobs:
 
       - name: Replace environment variables in JavaScript files
         run: |
+          # Ensure secrets are available (fail if missing)
+          if [ -z "${{ secrets.CONTACT_FORM_URL }}" ]; then
+            echo "ERROR: CONTACT_FORM_URL secret is not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.NEWS_API_URL }}" ]; then
+            echo "ERROR: NEWS_API_URL secret is not set"
+            exit 1
+          fi
+
           # Replace placeholders with actual secret values
           find . -name "*.js" -type f -exec sed -i "s|{{CONTACT_FORM_URL}}|${{ secrets.CONTACT_FORM_URL }}|g" {} +
           find . -name "*.js" -type f -exec sed -i "s|{{NEWS_API_URL}}|${{ secrets.NEWS_API_URL }}|g" {} +
 
-          # Verify replacements (for debugging - remove in production)
+          # Verify replacements (for debugging)
           echo "=== Checking contact.js ==="
-          grep -n "GOOGLE_SCRIPT_URL" assets/js/contact.js || echo "No GOOGLE_SCRIPT_URL found in contact.js"
+          if grep -q "{{CONTACT_FORM_URL}}" assets/js/contact.js; then
+            echo "ERROR: CONTACT_FORM_URL placeholder not replaced"
+            exit 1
+          else
+            echo "✅ CONTACT_FORM_URL placeholder replaced successfully"
+          fi
 
-          echo "=== Checking news.js ==="
-          grep -n "GOOGLE_SHEETS_API_URL" assets/js/news.js || echo "No GOOGLE_SHEETS_API_URL found in news.js"
+          echo "=== Checking announcements.js ==="
+          if grep -q "{{NEWS_API_URL}}" assets/js/announcements.js; then
+            echo "ERROR: NEWS_API_URL placeholder not replaced"
+            exit 1
+          else
+            echo "✅ NEWS_API_URL placeholder replaced successfully"
+          fi
 
       - name: Create custom 404 page
         run: |
@@ -66,8 +86,8 @@ jobs:
                       // Map of clean URLs to actual file paths
                       var urlMap = {
                           '/about': '/pages/about.html',
-                          '/news': '/pages/news.html',
-                          '/solutions': '/pages/solutions.html',
+                          '/announcements': '/pages/announcements.html',
+                          '/expertise': '/pages/expertise.html',
                           '/contact': '/pages/contact.html'
                       };
                       
