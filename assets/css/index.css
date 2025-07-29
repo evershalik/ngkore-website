@@ -1106,3 +1106,654 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* New Highlight Sections CSS - Adi patch*/ 
+
+/* Post-Quantum Highlight Section */
+/* .pqc-highlight-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pqc-highlight-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%236B9BD1" fill-opacity="0.03"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+    opacity: 0.4;
+    animation: float 25s ease-in-out infinite;
+} */
+
+/* eBPF Highlight Section */
+/* .ebpf-highlight-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.ebpf-highlight-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%234A90E2" fill-opacity="0.03"><circle cx="20" cy="20" r="4"/><circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="20"/></g></g></svg>');
+    opacity: 0.5;
+    animation: float 30s ease-in-out infinite reverse;
+} */
+
+/* Common Highlight Content Styles */
+/* .highlight-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.highlight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(107, 155, 209, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.highlight-badge svg {
+    width: 20px;
+    height: 20px;
+}
+
+.highlight-title {
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+}
+
+.highlight-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    text-align: justify;
+    text-justify: inter-word;
+} */
+
+/* Hover effects for highlight sections */
+/* .pqc-highlight-section:hover::before,
+.ebpf-highlight-section:hover::before {
+    animation-duration: 15s;
+}
+
+.highlight-content:hover .highlight-badge {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 155, 209, 0.4);
+}
+
+.highlight-content:hover .highlight-title {
+    transform: translateY(-1px);
+} */
+
+/* Responsive adjustments for new sections */
+/* @media (max-width: 768px) { 
+    .pqc-highlight-section,
+    .ebpf-highlight-section {
+        padding: 60px 0;
+    }
+    
+    .highlight-title {
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
+    }
+    
+    .highlight-description {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .highlight-badge {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pqc-highlight-section,
+    .ebpf-highlight-section {
+        padding: 40px 0;
+    }
+    
+    .highlight-title {
+        font-size: clamp(1.5rem, 6vw, 1.8rem);
+        margin-bottom: 20px;
+    }
+    
+    .highlight-description {
+        font-size: 0.95rem;
+    }
+    
+    .highlight-badge {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+}  Adi Patch 1 completed*/
+
+/* Enhanced Highlights Section - CONSISTENT BLUE THEME WITH VISIBLE PROFESSIONAL EFFECTS */
+.enhanced-highlights-section {
+    padding: 50px 0 30px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* VISIBLE BUT PROFESSIONAL BACKGROUND EFFECTS */
+.crazy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* VISIBLE PROFESSIONAL GEOMETRIC SHAPES - BLUE THEME ONLY */
+.geometric-shape {
+    position: absolute;
+    border-radius: 50%;
+    animation: gentleFloat 30s ease-in-out infinite;
+    opacity: 0.12; /* Much more visible now */
+}
+
+.shape-1 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(45deg, #dbeafe, #bfdbfe);
+    top: 15%;
+    left: 8%;
+    animation-delay: -5s;
+    border-radius: 30% 70% 40% 60%;
+}
+
+.shape-2 {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    top: 65%;
+    right: 12%;
+    animation-delay: -15s;
+    border-radius: 60% 40% 70% 30%;
+}
+
+.shape-3 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(90deg, #f0f9ff, #e0f2fe);
+    bottom: 25%;
+    left: 65%;
+    animation-delay: -25s;
+    border-radius: 40% 60% 30% 70%;
+}
+
+.shape-4 {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    top: -5%;
+    right: 35%;
+    animation-delay: -10s;
+    border-radius: 50% 30% 60% 40%;
+}
+
+.shape-5 {
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(225deg, #dbeafe, #93c5fd);
+    top: 40%;
+    right: 80%;
+    animation-delay: -20s;
+    border-radius: 70% 30% 50% 50%;
+}
+
+/* VISIBLE FLOATING ORBS - BLUE VARIANTS ONLY */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    animation: professionalOrbit 35s ease-in-out infinite;
+    filter: blur(1px);
+    opacity: 0.15; /* More visible */
+}
+
+.orb-1 {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #dbeafe, transparent);
+    top: 20%;
+    left: 80%;
+    animation-delay: -8s;
+}
+
+.orb-2 {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, #bfdbfe, transparent);
+    bottom: 45%;
+    right: 25%;
+    animation-delay: -18s;
+}
+
+.orb-3 {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, #eff6ff, transparent);
+    top: 50%;
+    left: 15%;
+    animation-delay: -28s;
+}
+
+.orb-4 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #e0f2fe, transparent);
+    bottom: 20%;
+    right: 60%;
+    animation-delay: -5s;
+}
+
+/* VISIBLE LIGHT RAYS - PROFESSIONAL EFFECT */
+.light-beam {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #dbeafe, transparent);
+    animation: gentleBeam 25s linear infinite;
+    opacity: 0.15; /* More visible */
+    filter: blur(0.5px);
+}
+
+.beam-1 {
+    left: 30%;
+    animation-delay: -5s;
+}
+
+.beam-2 {
+    left: 70%;
+    animation-delay: -15s;
+}
+
+.beam-3 {
+    left: 85%;
+    animation-delay: -10s;
+    background: linear-gradient(to bottom, transparent, #bfdbfe, transparent);
+}
+
+/* FLOATING PARTICLES FOR EXTRA CREATIVITY */
+.particle-swarm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.swarm-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #93c5fd;
+    border-radius: 50%;
+    animation: gentleParticleFloat 20s linear infinite;
+    opacity: 0.4;
+}
+
+.swarm-particle:nth-child(1) { left: 15%; animation-delay: -2s; }
+.swarm-particle:nth-child(2) { left: 35%; animation-delay: -8s; }
+.swarm-particle:nth-child(3) { left: 55%; animation-delay: -14s; }
+.swarm-particle:nth-child(4) { left: 75%; animation-delay: -6s; }
+.swarm-particle:nth-child(5) { left: 25%; animation-delay: -12s; }
+.swarm-particle:nth-child(6) { left: 65%; animation-delay: -18s; }
+
+/* Community Note Styling - CONSISTENT THEME */
+.community-note {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.community-note p {
+    font-size: 1.15rem;
+    color: #1e293b; /* Consistent dark text */
+    font-style: italic;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.highlight-item {
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 5;
+}
+
+.highlight-item:last-child {
+    margin-bottom: 20px;
+}
+
+/* PROFESSIONAL LIGHT-THEMED BOXES */
+.highlight-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* PROFESSIONAL HOVER EFFECT */
+.highlight-content:hover {
+    transform: translateY(-12px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.12),
+        0 10px 20px rgba(59, 130, 246, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* SUBTLE RIPPLE EFFECT */
+.highlight-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.highlight-content:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ALL SECTIONS LEFT ALIGNED */
+.left-aligned .highlight-content {
+    flex-direction: row;
+}
+
+.left-text {
+    text-align: left !important;
+}
+
+.highlight-text {
+    flex: 2;
+    z-index: 2;
+}
+
+.highlight-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ALL HEADINGS SAME BLUE COLOR AS eBPF */
+.highlight-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    position: relative;
+    color: #3b82f6; /* Same beautiful blue for all three headings */
+}
+
+.highlight-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #475569; /* Consistent gray */
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ALL ICON BACKGROUNDS SAME BLUE THEME - CONSISTENT */
+.floating-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: gentleFloat 8s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+.highlight-content:hover .floating-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.floating-icon svg {
+    width: 45px;
+    height: 45px;
+    color: white;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* ALL ICONS SAME BEAUTIFUL BLUE GRADIENT */
+.quantum-icon,
+.ebpf-icon,
+.telecom-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Same blue for all */
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* REDUCE OVERALL SECTION SPACING */
+.enhanced-highlights-section + * {
+    margin-top: -20px;
+}
+
+/* ENHANCED ANIMATIONS FOR VISIBILITY */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        border-radius: 50% 30% 60% 40%;
+    }
+    25% {
+        transform: translateY(-20px) rotate(2deg);
+        border-radius: 40% 60% 30% 70%;
+    }
+    50% {
+        transform: translateY(-10px) rotate(-2deg);
+        border-radius: 60% 40% 70% 30%;
+    }
+    75% {
+        transform: translateY(-15px) rotate(1deg);
+        border-radius: 30% 70% 40% 60%;
+    }
+}
+
+@keyframes professionalOrbit {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+    }
+    25% {
+        transform: translateY(-30px) translateX(20px) scale(1.1);
+    }
+    50% {
+        transform: translateY(-15px) translateX(-25px) scale(0.95);
+    }
+    75% {
+        transform: translateY(-22px) translateX(15px) scale(1.05);
+    }
+}
+
+@keyframes gentleBeam {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    50% {
+        opacity: 0.15;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+@keyframes gentleParticleFloat {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .enhanced-highlights-section {
+        padding: 40px 0 20px 0;
+    }
+    
+    .highlight-content {
+        flex-direction: column !important;
+        gap: 25px;
+        padding: 20px;
+    }
+    
+    .left-text {
+        text-align: center !important;
+    }
+    
+    .highlight-title {
+        font-size: 1.75rem;
+    }
+    
+    .highlight-subtitle {
+        font-size: 1rem;
+    }
+    
+    .floating-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .floating-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .community-note p {
+        font-size: 1rem;
+    }
+    
+    .highlight-item {
+        margin-bottom: 25px;
+    }
+    
+    .highlight-item:last-child {
+        margin-bottom: 15px;
+    }
+    
+    .highlight-content:hover {
+        transform: translateY(-8px);
+    }
+    
+    /* Keep background effects visible on mobile */
+    .geometric-shape,
+    .floating-orb {
+        opacity: 0.08;
+    }
+    
+    .light-beam {
+        opacity: 0.1;
+    }
+    
+    .swarm-particle {
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .enhanced-highlights-section {
+        padding: 30px 0 15px 0;
+    }
+    
+    .highlight-title {
+        font-size: 1.5rem;
+    }
+    
+    .highlight-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .floating-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .floating-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .community-note p {
+        font-size: 0.95rem;
+    }
+    
+    .highlight-item {
+        margin-bottom: 20px;
+    }
+    
+    .highlight-item:last-child {
+        margin-bottom: 10px;
+    }
+}
