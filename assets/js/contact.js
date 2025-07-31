@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   // CONFIGURATIONS
   const GOOGLE_SCRIPT_URL = "{{CONTACT_FORM_URL}}"; // This will be replaced by GitHub Actions
+  
+  // Check if we're in development mode (URL not replaced)
+  const isDevelopment = GOOGLE_SCRIPT_URL.includes("{{CONTACT_FORM_URL}}");
+  
+  if (isDevelopment) {
+    console.warn("Development mode: Contact form will simulate submission");
+  }
 
   const contactForm = document.getElementById("contact-form");
   const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -74,34 +81,48 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show loading state
     showLoadingState();
 
-    // Send to Google Sheets
-    fetch(GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify(formObject),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "no-cors",
-    })
-      .then((response) => {
-        // With no-cors mode, we can't read the response
-        // So we'll assume success if no error is thrown
-        console.log("Data sent to Google Sheets (no-cors mode)");
+    // Handle development vs production
+    if (isDevelopment) {
+      // Simulate form submission in development
+      console.log("=== DEVELOPMENT MODE - SIMULATING FORM SUBMISSION ===");
+      console.log("Form data that would be sent:", formObject);
+      
+      setTimeout(() => {
         hideLoadingState();
-        showSuccessMessage();
+        showSuccessMessage("✅ Development mode: Form submission simulated successfully!");
         contactForm.reset();
-
-        // Reset submission flag after success
         isSubmitting = false;
+      }, 2000);
+    } else {
+      // Send to Google Sheets in production
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(formObject),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
       })
-      .catch((error) => {
-        console.error("Form submission failed:", error);
-        hideLoadingState();
-        showErrorMessage("Failed to submit form. Please try again.");
+        .then((response) => {
+          // With no-cors mode, we can't read the response
+          // So we'll assume success if no error is thrown
+          console.log("Data sent to Google Sheets (no-cors mode)");
+          hideLoadingState();
+          showSuccessMessage();
+          contactForm.reset();
 
-        // Reset submission flag after error
-        isSubmitting = false;
-      });
+          // Reset submission flag after success
+          isSubmitting = false;
+        })
+        .catch((error) => {
+          console.error("Form submission failed:", error);
+          hideLoadingState();
+          showErrorMessage("Failed to submit form. Please try again.");
+
+          // Reset submission flag after error
+          isSubmitting = false;
+        });
+    }
   });
 
   // Validation
@@ -190,12 +211,10 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButtonIcon.style.display = "inline-block";
   }
 
-  function showSuccessMessage() {
+  function showSuccessMessage(customMessage) {
     console.log("Showing success message inline");
-    showMessage(
-      "✅ Message sent successfully! We will get back to you soon.",
-      "success"
-    );
+    const message = customMessage || "✅ Message sent successfully! We will get back to you soon.";
+    showMessage(message, "success");
 
     // Auto-hide success message after 5 seconds
     setTimeout(() => {
