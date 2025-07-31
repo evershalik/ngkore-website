@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Form URL:", GOOGLE_SCRIPT_URL);
   
   // Check if we're in development mode (URL not replaced)
-  const isDevelopment = GOOGLE_SCRIPT_URL.includes("{{CONTACT_FORM_URL}}");
+  const isDevelopment = !GOOGLE_SCRIPT_URL.startsWith("https://script.google.com");
+  console.log("Development mode check:");
+  console.log("- URL:", GOOGLE_SCRIPT_URL);
+  console.log("- Is Google Apps Script URL:", GOOGLE_SCRIPT_URL.startsWith("https://script.google.com"));
+  console.log("- isDevelopment:", isDevelopment);
 
   const contactForm = document.getElementById("contact-form");
   
