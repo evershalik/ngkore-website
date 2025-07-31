@@ -59,9 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Form submission started for:", formObject.email);
 
     // Validate form
+    console.log("Starting form validation...");
     if (!validateForm(formObject)) {
+      console.log("Form validation failed, stopping submission");
       return;
     }
+    console.log("Form validation passed, continuing...");
 
     // Mark as submitting to prevent duplicates
     isSubmitting = true;
@@ -70,8 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
     showLoadingState();
 
     // Handle development vs production
+    console.log("Checking mode - isDevelopment:", isDevelopment);
     if (isDevelopment) {
       // Simulate form submission in development (silent for users)
+      console.log("Running in development mode - simulating submission");
       setTimeout(() => {
         hideLoadingState();
         showSuccessMessage();
@@ -91,11 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
         mode: "cors", // Changed from no-cors to cors for better error handling
       })
         .then(async (response) => {
+          console.log("Received response from server:", response.status);
           if (!response.ok) {
             throw new Error(`Server error: ${response.status}`);
           }
           
           const responseData = await response.json();
+          console.log("Server response data:", responseData);
           
           if (responseData.result === 'success') {
             hideLoadingState();
