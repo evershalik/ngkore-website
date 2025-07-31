@@ -2,32 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // CONFIGURATIONS
   const GOOGLE_SCRIPT_URL = "{{CONTACT_FORM_URL}}"; // This will be replaced by GitHub Actions
   
-  // TEMPORARY DEBUG - Check if script is loaded and form exists
-  console.log("Contact form script loaded");
-  console.log("Form URL:", GOOGLE_SCRIPT_URL);
-  
   // Check if we're in development mode (URL not replaced)
   const isDevelopment = !GOOGLE_SCRIPT_URL.startsWith("https://script.google.com");
-  console.log("Development mode check:");
-  console.log("- URL:", GOOGLE_SCRIPT_URL);
-  console.log("- Is Google Apps Script URL:", GOOGLE_SCRIPT_URL.startsWith("https://script.google.com"));
-  console.log("- isDevelopment:", isDevelopment);
 
   const contactForm = document.getElementById("contact-form");
   
-  // TEMPORARY DEBUG - Check if form elements exist
   if (!contactForm) {
-    console.error("Contact form not found! Check if element with id 'contact-form' exists");
     return;
   }
-  console.log("Contact form found");
   
   const submitButton = contactForm.querySelector('button[type="submit"]');
   if (!submitButton) {
-    console.error("Submit button not found! Check if button with type='submit' exists in form");
     return;
   }
-  console.log("Submit button found");
   
   const submitButtonText = submitButton.querySelector("span");
   const submitButtonIcon = submitButton.querySelector("svg");
@@ -36,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let isSubmitting = false;
 
   // Handle Form Submission
-  console.log("Adding submit event listener to form");
   contactForm.addEventListener("submit", function (e) {
-    console.log("Form submit event triggered!");
     e.preventDefault();
 
     // Prevent duplicate submissions
@@ -59,16 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       message: document.getElementById("message").value.trim(),
     };
 
-    // Log basic form submission info (keep minimal for debugging)
-    console.log("Form submission started for:", formObject.email);
-
     // Validate form
-    console.log("Starting form validation...");
     if (!validateForm(formObject)) {
-      console.log("Form validation failed, stopping submission");
       return;
     }
-    console.log("Form validation passed, continuing...");
 
     // Mark as submitting to prevent duplicates
     isSubmitting = true;
@@ -77,10 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
     showLoadingState();
 
     // Handle development vs production
-    console.log("Checking mode - isDevelopment:", isDevelopment);
     if (isDevelopment) {
-      // Simulate form submission in development (silent for users)
-      console.log("Running in development mode - simulating submission");
+      // Simulate form submission in development
       setTimeout(() => {
         hideLoadingState();
         showSuccessMessage();
@@ -89,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 2000);
     } else {
       // Send to Google Apps Script in production
-      console.log("Sending form to server...");
       
       fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -100,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
         mode: "no-cors", // Use no-cors mode to bypass CORS policy
       })
         .then(async (response) => {
-          console.log("Request sent successfully with no-cors mode");
           // With no-cors mode, we can't read response details, so assume success
           // The Google Apps Script will still process the form and send emails
           
@@ -110,8 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
           isSubmitting = false;
         })
         .catch((error) => {
-          console.error("Form submission failed:", error);
-          
           hideLoadingState();
           showErrorMessage("Unable to submit form. Please try again or contact us directly.");
 
