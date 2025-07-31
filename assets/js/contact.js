@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Simulate form submission in development
       console.log("=== DEVELOPMENT MODE - SIMULATING FORM SUBMISSION ===");
       console.log("Form data that would be sent:", formObject);
+      console.log("URL would be:", GOOGLE_SCRIPT_URL);
       
       setTimeout(() => {
         hideLoadingState();
@@ -94,30 +95,51 @@ document.addEventListener("DOMContentLoaded", function () {
         isSubmitting = false;
       }, 2000);
     } else {
-      // Send to Google Sheets in production
+      // Send to Google Apps Script in production
+      console.log("=== PRODUCTION MODE - SENDING TO GOOGLE APPS SCRIPT ===");
+      console.log("API URL:", GOOGLE_SCRIPT_URL);
+      console.log("Form data:", formObject);
+      
       fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(formObject),
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors",
+        mode: "cors", // Changed from no-cors to cors for better error handling
       })
-        .then((response) => {
-          // With no-cors mode, we can't read the response
-          // So we'll assume success if no error is thrown
-          console.log("Data sent to Google Sheets (no-cors mode)");
-          hideLoadingState();
-          showSuccessMessage();
-          contactForm.reset();
+        .then(async (response) => {
+          console.log("Response received:", response);
+          console.log("Response status:", response.status);
+          
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+          
+          const responseData = await response.json();
+          console.log("Response data:", responseData);
+          
+          if (responseData.result === 'success') {
+            hideLoadingState();
+            showSuccessMessage();
+            contactForm.reset();
+          } else {
+            throw new Error(responseData.message || 'Form submission failed');
+          }
 
           // Reset submission flag after success
           isSubmitting = false;
         })
         .catch((error) => {
           console.error("Form submission failed:", error);
+          console.error("Error details:", {
+            name: error.name,
+            message: error.message,
+            stack: error.stack
+          });
+          
           hideLoadingState();
-          showErrorMessage("Failed to submit form. Please try again.");
+          showErrorMessage(`Failed to submit form: ${error.message}`);
 
           // Reset submission flag after error
           isSubmitting = false;
