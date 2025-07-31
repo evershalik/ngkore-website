@@ -4,10 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Check if we're in development mode (URL not replaced)
   const isDevelopment = GOOGLE_SCRIPT_URL.includes("{{CONTACT_FORM_URL}}");
-  
-  if (isDevelopment) {
-    console.warn("Development mode: Contact form will simulate submission");
-  }
 
   const contactForm = document.getElementById("contact-form");
   const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -23,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Prevent duplicate submissions
     if (isSubmitting) {
-      console.log("Form already being submitted, ignoring duplicate request");
       return;
     }
 
@@ -40,40 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
       message: document.getElementById("message").value.trim(),
     };
 
-    // Debug: Log form data for troubleshooting
-    console.log("=== FORM SUBMISSION DEBUG ===");
-    console.log("Form data being sent:", formObject);
-    console.log(
-      "First Name:",
-      `"${formObject.firstName}" (length: ${formObject.firstName.length})`
-    );
-    console.log(
-      "Last Name:",
-      `"${formObject.lastName}" (length: ${formObject.lastName.length})`
-    );
-    console.log(
-      "Email:",
-      `"${formObject.email}" (length: ${formObject.email.length})`
-    );
-    console.log(
-      "Subject:",
-      `"${formObject.subject}" (length: ${formObject.subject.length})`
-    );
-    console.log(
-      "Message:",
-      `"${formObject.message}" (length: ${formObject.message.length})`
-    );
+    // Log basic form submission info (keep minimal for debugging)
+    console.log("Form submission started for:", formObject.email);
 
     // Validate form
-    const validationResult = validateForm(formObject);
-    console.log("Validation result:", validationResult);
-
-    if (!validationResult) {
-      console.log("Validation failed - stopping submission");
+    if (!validateForm(formObject)) {
       return;
     }
-
-    console.log("Validation passed - proceeding with submission");
 
     // Mark as submitting to prevent duplicates
     isSubmitting = true;
@@ -83,22 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle development vs production
     if (isDevelopment) {
-      // Simulate form submission in development
-      console.log("=== DEVELOPMENT MODE - SIMULATING FORM SUBMISSION ===");
-      console.log("Form data that would be sent:", formObject);
-      console.log("URL would be:", GOOGLE_SCRIPT_URL);
-      
+      // Simulate form submission in development (silent for users)
       setTimeout(() => {
         hideLoadingState();
-        showSuccessMessage("✅ Development mode: Form submission simulated successfully!");
+        showSuccessMessage();
         contactForm.reset();
         isSubmitting = false;
       }, 2000);
     } else {
       // Send to Google Apps Script in production
-      console.log("=== PRODUCTION MODE - SENDING TO GOOGLE APPS SCRIPT ===");
-      console.log("API URL:", GOOGLE_SCRIPT_URL);
-      console.log("Form data:", formObject);
+      console.log("Sending form to server...");
       
       fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -109,15 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
         mode: "cors", // Changed from no-cors to cors for better error handling
       })
         .then(async (response) => {
-          console.log("Response received:", response);
-          console.log("Response status:", response.status);
-          
           if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            throw new Error(`Server error: ${response.status}`);
           }
           
           const responseData = await response.json();
-          console.log("Response data:", responseData);
           
           if (responseData.result === 'success') {
             hideLoadingState();
@@ -132,14 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => {
           console.error("Form submission failed:", error);
-          console.error("Error details:", {
-            name: error.name,
-            message: error.message,
-            stack: error.stack
-          });
           
           hideLoadingState();
-          showErrorMessage(`Failed to submit form: ${error.message}`);
+          showErrorMessage("Unable to submit form. Please try again or contact us directly.");
 
           // Reset submission flag after error
           isSubmitting = false;
@@ -149,61 +102,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Validation
   function validateForm(data) {
-    console.log("=== VALIDATION DEBUG ===");
     const errors = [];
 
-    // Check each field individually with detailed logging
-    console.log("Checking firstName:", data.firstName, typeof data.firstName);
+    // Check required fields
     if (!data.firstName || data.firstName.length === 0) {
-      console.log("firstName validation FAILED");
       errors.push("First name is required");
-    } else {
-      console.log("firstName validation PASSED");
     }
 
-    console.log("Checking lastName:", data.lastName, typeof data.lastName);
     if (!data.lastName || data.lastName.length === 0) {
-      console.log("lastName validation FAILED");
       errors.push("Last name is required");
-    } else {
-      console.log("lastName validation PASSED");
     }
 
-    console.log("Checking email:", data.email, typeof data.email);
     if (!data.email || data.email.length === 0) {
-      console.log("email validation FAILED - empty");
       errors.push("Email is required");
     } else if (!isValidEmail(data.email)) {
-      console.log("email validation FAILED - invalid format");
       errors.push("Please enter a valid email address");
-    } else {
-      console.log("email validation PASSED");
     }
 
-    console.log("Checking subject:", data.subject, typeof data.subject);
     if (!data.subject || data.subject.length === 0) {
-      console.log("subject validation FAILED - empty");
       errors.push("Subject is required");
     } else if (data.subject.length < 3) {
-      console.log("subject validation FAILED - too short");
       errors.push("Subject must be at least 3 characters long");
-    } else {
-      console.log("subject validation PASSED");
     }
 
-    console.log("Checking message:", data.message, typeof data.message);
     if (!data.message || data.message.length === 0) {
-      console.log("message validation FAILED - empty");
       errors.push("Message is required");
     } else if (data.message.length < 10) {
-      console.log("message validation FAILED - too short");
       errors.push("Message must be at least 10 characters long");
-    } else {
-      console.log("message validation PASSED");
     }
-
-    console.log("Total validation errors:", errors.length);
-    console.log("Errors array:", errors);
 
     if (errors.length > 0) {
       showErrorMessage(
@@ -234,7 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showSuccessMessage(customMessage) {
-    console.log("Showing success message inline");
     const message = customMessage || "✅ Message sent successfully! We will get back to you soon.";
     showMessage(message, "success");
 
@@ -252,11 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const messageElement = document.getElementById("form-message");
 
     if (!messageElement) {
-      console.error("Message container not found!");
       return;
     }
-
-    console.log(`Displaying ${type} message:`, message);
 
     // Use innerHTML to support line breaks and bullets
     messageElement.innerHTML = message.replace(/\n/g, "<br>");
@@ -265,8 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Scroll to message smoothly
     messageElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
-    console.log("Message displayed successfully");
   }
 
   function hideMessage() {
