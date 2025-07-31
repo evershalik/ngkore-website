@@ -2,11 +2,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // CONFIGURATIONS
   const GOOGLE_SCRIPT_URL = "{{CONTACT_FORM_URL}}"; // This will be replaced by GitHub Actions
   
+  // TEMPORARY DEBUG - Check if script is loaded and form exists
+  console.log("Contact form script loaded");
+  console.log("Form URL:", GOOGLE_SCRIPT_URL);
+  
   // Check if we're in development mode (URL not replaced)
   const isDevelopment = GOOGLE_SCRIPT_URL.includes("{{CONTACT_FORM_URL}}");
 
   const contactForm = document.getElementById("contact-form");
+  
+  // TEMPORARY DEBUG - Check if form elements exist
+  if (!contactForm) {
+    console.error("Contact form not found! Check if element with id 'contact-form' exists");
+    return;
+  }
+  console.log("Contact form found");
+  
   const submitButton = contactForm.querySelector('button[type="submit"]');
+  if (!submitButton) {
+    console.error("Submit button not found! Check if button with type='submit' exists in form");
+    return;
+  }
+  console.log("Submit button found");
+  
   const submitButtonText = submitButton.querySelector("span");
   const submitButtonIcon = submitButton.querySelector("svg");
 
@@ -14,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let isSubmitting = false;
 
   // Handle Form Submission
+  console.log("Adding submit event listener to form");
   contactForm.addEventListener("submit", function (e) {
+    console.log("Form submit event triggered!");
     e.preventDefault();
 
     // Prevent duplicate submissions
@@ -160,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showSuccessMessage(customMessage) {
-    const message = customMessage || "✅ Message sent successfully! We will get back to you soon.";
+    const message = customMessage || "Message sent successfully! We will get back to you soon.";
     showMessage(message, "success");
 
     // Auto-hide success message after 5 seconds
