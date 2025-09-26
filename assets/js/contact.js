@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Auto-hide success message after 5 seconds
     setTimeout(() => {
       hideMessage();
-    }, 5000);
+    }, 10000);
   }
 
   function showErrorMessage(msg) {
