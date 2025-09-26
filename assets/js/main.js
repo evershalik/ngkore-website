@@ -186,47 +186,7 @@ document.querySelectorAll(".tech-item").forEach((item) => {
   });
 });
 
-// Form Handling (if contact form exists)
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-
-    // Basic validation
-    if (!data.name || !data.email || !data.message) {
-      showNotification("Please fill in all required fields.", "error");
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-      showNotification("Please enter a valid email address.", "error");
-      return;
-    }
-
-    // Show loading state
-    const submitButton = this.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = "Sending...";
-    submitButton.disabled = true;
-
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      showNotification(
-        "Thank you for your message! We will get back to you soon.",
-        "success"
-      );
-      this.reset();
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
-    }, 2000);
-  });
-}
+// Note: Contact form handling is now done in contact.js
 
 // Notification System
 function showNotification(message, type = "info") {
