@@ -1,6 +1,6 @@
 # NgKore Website
 
-NgKore ([ngkore.org](https://ngkore.org)) is an open-source community driving innovation across Post-Quantum Cryptography (PQC), 5G Advanced, 6G, O-RAN, NTN, AI/ML, Blockchain, Quantum technologies, and Cloud-Native Architectures.
+NgKore ([ngkorefoundation.org](https://ngkorefoundation.org)) is an open-source community driving innovation across Post-Quantum Cryptography (PQC), 5G Advanced, 6G, O-RAN, NTN, AI/ML, Blockchain, Quantum technologies, and Cloud-Native Architectures.
 
 ## Development
 
