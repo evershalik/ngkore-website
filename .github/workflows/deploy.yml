@@ -72,7 +72,7 @@ jobs:
           <head>
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>NgKore - Page Not Found</title>
+              <title>NgKore Foundation - Page Not Found</title>
               <script>
                   // Handle clean URLs for GitHub Pages
                   (function() {
@@ -138,7 +138,7 @@ jobs:
           </head>
           <body>
               <div class="container">
-                  <h1>NgKore</h1>
+                  <h1>NgKore Foundation</h1>
                   <p>Redirecting you to the right place...</p>
                   <a href="/" class="btn">Go Home</a>
               </div>
