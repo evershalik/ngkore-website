@@ -334,8 +334,8 @@ function typeWriter(element, text, speed = 50) {
     }
 
     // Structure it properly with NgKore: and gradient-text wrapper
-    if (styledText.includes("NgKore Foundation:")) {
-      const parts = styledText.split("NgKore Foundation:");
+    if (styledText.includes("NgKore:")) {
+      const parts = styledText.split("NgKore:");
       if (parts.length === 2 && parts[1].trim()) {
         return `NgKore: <span class="gradient-text">${parts[1].trim()}</span>`;
       }
