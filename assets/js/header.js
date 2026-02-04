@@ -63,6 +63,7 @@ function configureHeader(basePath) {
   const links = {
     "home-link": basePath || "/",
     "about-link": `${basePath}pages/about`,
+    "meetings-link": `${basePath}pages/meetings`,
     "products-link": `${basePath}pages/expertise`,
     "announcements-link": `${basePath}pages/announcements`,
     "docs-link": "https://docs.ngkorefoundation.org",

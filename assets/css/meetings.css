@@ -1,0 +1,352 @@
+/* NgKore Meetings Page Styles */
+
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
+
+/* Hero */
+.meetings-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 60%, #60a5fa 100%);
+  color: #ffffff;
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.meetings-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/pattern/pattern-01.png") repeat;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.meetings-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.meetings-hero .solutions-title {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.meetings-hero .solutions-subtitle {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Overview */
+.meetings-overview {
+  padding: 60px 0 30px;
+  background: var(--bg-primary);
+}
+
+.meetings-intro-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 32px 32px 28px;
+}
+
+.meetings-intro-card h2 {
+  font-size: 1.7rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.meetings-intro-card p {
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.meeting-types-list {
+  margin: 12px 0 12px 1.25rem;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.meeting-types-list li {
+  margin-bottom: 6px;
+}
+
+.timezone-note {
+  font-size: 0.95rem;
+  color: #0f172a;
+  margin-top: 8px;
+}
+
+.calendar-note {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.calendar-note a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.calendar-note a:hover {
+  text-decoration: underline;
+}
+
+/* Meetings sections */
+.meetings-section {
+  padding: 50px 0;
+  background: var(--bg-secondary);
+}
+
+.meetings-section:nth-of-type(3) {
+  /* Working groups section sits on slightly lighter background */
+  background: #ffffff;
+}
+
+.meetings-section .section-title {
+  margin-bottom: 24px;
+}
+
+.section-lead {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+}
+
+.meetings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.meetings-grid.single {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.meeting-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 22px 22px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.meeting-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.16);
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.meeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.meeting-type-badge,
+.meeting-frequency-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.meeting-type-badge {
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+}
+
+.meeting-frequency-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.tac-card .meeting-type-badge {
+  background: rgba(79, 70, 229, 0.12);
+  color: #4f46e5;
+}
+
+.meeting-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.meeting-description {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 4px 0 6px;
+}
+
+.meeting-time {
+  font-size: 0.95rem;
+  color: #0f172a;
+  font-weight: 500;
+  margin: 2px 0 10px;
+}
+
+.meeting-day {
+  margin-right: 8px;
+}
+
+.meeting-slot {
+  color: #1d4ed8;
+}
+
+.meeting-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.meeting-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.meeting-button.primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.meeting-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
+}
+
+.meeting-button.secondary {
+  background: #ffffff;
+  color: #1d4ed8;
+  border-color: rgba(37, 99, 235, 0.45);
+}
+
+.meeting-button.secondary:hover {
+  background: rgba(219, 234, 254, 0.6);
+}
+
+/* CTA */
+.meetings-cta {
+  padding: 60px 0 70px;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 40%, #ffffff 100%);
+}
+
+.meetings-cta-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 32px 30px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+  text-align: center;
+}
+
+.meetings-cta-card h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.meetings-cta-card p {
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 auto 22px;
+  line-height: 1.6;
+}
+
+.meetings-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.meetings-cta .meeting-button.primary {
+  min-width: 230px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .meetings-hero {
+    padding: 100px 0 60px;
+  }
+
+  .meetings-intro-card {
+    padding: 24px 20px 22px;
+  }
+
+  .meetings-section {
+    padding: 40px 0;
+  }
+
+  .meeting-card {
+    padding: 20px 18px 18px;
+  }
+
+  .meeting-actions {
+    flex-direction: column;
+  }
+
+  .meeting-button {
+    width: 100%;
+  }
+
+  .meetings-cta-card {
+    padding: 26px 20px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .meetings-hero .solutions-title {
+    font-size: 2.1rem;
+  }
+
+  .meetings-hero .solutions-subtitle {
+    font-size: 1rem;
+  }
+
+  .meetings-intro-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+

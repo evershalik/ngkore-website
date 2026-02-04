@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//NGKORE FOUNDATION//Meeting//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tac-20260127@ngkorefoundation.org
+DTSTAMP:20260101T000000Z
+DTSTART:20260127T123000Z
+DTEND:20260127T133000Z
+RRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=-1;UNTIL=20261231T235959Z
+SUMMARY:TAC Meeting - NGKORE FOUNDATION
+DESCRIPTION:TAC Monthly Meeting (Last Tuesday)\nJoin via Microsoft Teams:\n
+ https://teams.microsoft.com/l/meetup-join/19%3a831baa0717764f3fbf1b5e35e955
+ bc25%40thread.tacv2/1766692950075?context=%7b%22Tid%22%3a%222a826c55-75a0-4
+ 4ac-8362-640d30f42145%22%2c%22Oid%22%3a%22ea748bd2-8c15-4249-9ef8-21bdf01e6
+ 11e%22%7d\n\nWorking Doc:\nhttps://docs.google.com/document/d/1Lto-lxoXVf3B
+ hAzpQ7YRqE_SAXHgspnpeyvQOHSVc0U/
+LOCATION:https://teams.microsoft.com/l/meetup-join/19%3a831baa0717764f3fbf1
+ b5e35e955bc25%40thread.tacv2/1766692950075?context=%7b%22Tid%22%3a%222a826c
+ 55-75a0-44ac-8362-640d30f42145%22%2c%22Oid%22%3a%22ea748bd2-8c15-4249-9ef8-
+ 21bdf01e611e%22%7d
+URL:https://teams.microsoft.com/l/meetup-join/19%3a831baa0717764f3fbf1b5e35
+ e955bc25%40thread.tacv2/1766692950075?context=%7b%22Tid%22%3a%222a826c55-75
+ a0-44ac-8362-640d30f42145%22%2c%22Oid%22%3a%22ea748bd2-8c15-4249-9ef8-21bdf
+ 01e611e%22%7d
+ATTACH;FMTTYPE=text/html:https://docs.google.com/document/d/1Lto-lxoXVf3BhA
+ zpQ7YRqE_SAXHgspnpeyvQOHSVc0U/
+END:VEVENT
+END:VCALENDAR
