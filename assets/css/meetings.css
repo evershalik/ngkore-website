@@ -1,5 +1,48 @@
 /* Meetings Page Styles */
 
+/* Shared page-header theme (matches other pages' hero) */
+.solutions-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.solutions-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/pattern/pattern-01.png") repeat;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.solutions-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.solutions-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.solutions-subtitle {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin-left: 200px;
+  opacity: 0.9;
+  line-height: 1.6;
+  text-align: center;
+}
+
 /* Section Styles */
 .meetings-section {
   padding: 80px 0;
